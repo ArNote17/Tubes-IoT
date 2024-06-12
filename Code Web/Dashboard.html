@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Inventory</title>
+    <link rel="stylesheet" href="layout/Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+    <script src="script/Firebase-config.js"></script>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/klipartz.com.png" alt="Inventory Logo">
+            <h1>INVENTORY</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="Dashboard.html"><span class="icon">🏠</span>Dashboard</a></li>
+                <div class="separator"></div>
+                <span class="title">Master</span>
+                <li><a href="#" onclick="showBarangMasuk()"><span class="icon">📥</span>Barang Masuk</a></li>
+                <li><a href="#" onclick="showBarangKeluar()"><span class="icon">📤</span>Barang Keluar</a></li>
+                <li><a href="#" onclick="showLaporanBarang()"><span class="icon">📊</span>Laporan Barang</a></li>
+                <!-- <div class="separator"></div> -->
+                <!-- <span class="title">API</span> -->
+                <!-- <li><a href="#"><span class="icon">📚</span>Dokumentasi API</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <div class="user-profile">
+                <span>Admin</span>
+                <div class="user-initials">AD</div>
+                <button id="logout-button">Logout</button>
+            </div>
+        </header>
+        <div class="breadcrumb-container">
+            <div class="breadcrumb">
+                <h2><span class="highlight">Inventory</span> / Dashboard</h2>
+            </div>
+        </div>
+        <section class="cards">
+            <div class="card total-barang">
+                <div class="text-container">
+                    <h3>TOTAL BARANG</h3>
+                    <p id="total-barang">0</p>
+                </div>
+                <span class="icon">📑</span>
+            </div>
+            <div class="card barang-masuk">
+                <div class="text-container">
+                    <h3>Barang Masuk</h3>
+                    <p id="barang-masuk">0</p>
+                </div>
+                <span class="icon">📥</span>
+            </div>
+            <div class="card barang-keluar">
+                <div class="text-container">
+                    <h3>Barang Keluar</h3>
+                    <p id="barang-keluar">0</p>
+                </div>
+                <span class="icon">📤</span>
+            </div>
+        </section>
+        <div id="content"></div>
+    </div>    
+    <script src="script/Dashboard.js"></script>
+</body>
+</html>

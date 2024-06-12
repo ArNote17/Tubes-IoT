@@ -1,0 +1,196 @@
+body {
+    font-family: 'Josefin Sans';
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #FFE500;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2.5px);
+    transform: scale(1.1);
+}
+
+.background-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+
+.welcome-message {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.right {
+    flex: 1;
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.right h2 {
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    color: #000000;
+    position: relative;
+}
+
+.input-group input {
+    width: 80%;
+    padding: 15px;
+    border: 1px solid #FFE500;
+    background-color: rgba(255, 230, 0, 0.369); 
+    border-radius: 20px;
+}
+
+.password-group {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #000;
+}
+
+.login-button {
+    width: 87%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #FFE500;
+    border: none;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #d4ac0d;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.popup-content p {
+    margin: 20px 0;
+}
+
+.popup-content input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #FFE500;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.reset-button:hover {
+    background-color: #d4ac0d;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

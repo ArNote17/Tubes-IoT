@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barang Masuk</title>
+    <link rel="stylesheet" href="layout/BarangKeluar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+    <script src="script/Firebase-config.js"></script>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/klipartz.com.png" alt="Inventory Logo">
+            <h1>INVENTORY</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Dashboard.html"><span class="icon">🏠</span>Dashboard</a></li>
+                <div class="separator"></div>
+                <span class="title">Master</span>
+                <li><a href="BarangMasuk.html"><span class="icon">📥</span>Barang Masuk</a></li>
+                <li class="active"><a href="BarangKeluar.html"><span class="icon">📤</span>Barang Keluar</a></li>
+                <li><a href="LaporanBarang.html"><span class="icon">📊</span>Laporan Barang</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <div class="user-profile">
+                <span>Admin</span>
+                <div class="user-initials">AD</div>
+            </div>
+        </header>
+        <div class="breadcrumb-container">
+            <div class="breadcrumb">
+                <h2><span class="highlight">Inventory</span> / Barang Keluar</h2>
+            </div>
+        </div>
+        <section class="form-section">
+            <button class="add-button" onclick="showAddForm()">+ Tambah Barang Keluar</button>
+            <div id="add-form" style="display: none;">
+                <h3>Tambah Barang Keluar</h3>
+                <form id="barangMasukForm">
+                    <input type="text" id="kode_barang" placeholder="Kode Barang" data-input="kode barang" required>
+                    <input type="text" id="nama_barang" placeholder="Nama Barang" data-input="nama barang" required>
+                    <input type="number" id="stok" placeholder="Stok Barang" data-input="stok barang" required>
+                    <input type="text" id="tanggal_keluar" placeholder="Tanggal Keluar" data-input="tanggal keluar" readonly required>
+                    <input type="text" id="oleh" placeholder="Oleh" data-input="oleh" required>
+                    <button type="submit" data-button="kirim keluar">Simpan</button>
+                </form>
+            </div>
+        </section>
+        <section class="table-section">
+            <input type="text" id="search-box" placeholder="Cari...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Stok Barang</th>
+                        <th>Tanggal Keluar</th>
+                        <th>Oleh</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="barangKeluarTableBody">
+                    <!-- Rows will be dynamically generated here -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button id="prev">Sebelumnya</button>
+                <span id="page-numbers"></span>
+                <button id="next">Selanjutnya</button>
+            </div>
+        </section>
+    </div>
+    <script src="script/BarangKeluar.js"></script>
+</body>
+</html>

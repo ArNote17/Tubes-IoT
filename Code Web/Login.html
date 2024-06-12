@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Inventory</title>
+    <link rel="stylesheet" href="layout/Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+    <script src="script/Firebase-config.js"></script>
+
+    <div class="container">
+        <div class="left">
+            <div class="background-container">
+                <img src="images/Login.jpg" alt="Warehouse" class="background-image">
+                <div class="background-overlay"></div>
+            </div>
+            <div class="welcome-message">
+                <img src="images/klipartz.com.png" alt="Logo" class="logo">
+                <h2>Selamat datang di SmartLogix</h2>
+                <p>Sistem Pendataan Barang</p>
+            </div>
+        </div>
+        <div class="right">
+            <h2>Login Inventory!</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder=".....@smartlogix.com" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="......" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <a href="#" class="forgot-password" id="forgot-password">Lupa Kata Sandi?</a>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="forgot-password-popup">
+        <div class="popup-content">
+            <span class="close-button" id="close-popup">&times;</span>
+            <h2>Lupa Kata Sandi</h2>
+            <p>Masukkan email Anda yang terdaftar di sistem dan kami akan mengirimkan posmail untuk reset kata sandi Anda.</p>
+            <input type="email" placeholder="Masukkan email Anda" required>
+            <button class="reset-button">Reset</button>
+        </div>
+    </div>
+
+    <script src="script/Login.js"></script>
+</body>
+</html>
